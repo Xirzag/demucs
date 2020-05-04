@@ -100,6 +100,12 @@ class Demucs(nn.Module):
         """
 
         super().__init__()
+        
+        n_d = [sources, audio_channels,channels,depth,rewrite,glu,upsample,rescale,kernel_size,stride,growth,lstm_layers,context]
+        n_s = ['sources', 'audio_channels','channels','depth','rewrite','glu','upsample','rescale','kernel_size','stride','growth','lstm_layers','context']
+        
+        [print(s, n, '\n') for n, s in zip(n_d, n_s)]
+        
         self.audio_channels = audio_channels
         self.sources = sources
         self.kernel_size = kernel_size
