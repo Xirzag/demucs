@@ -182,6 +182,7 @@ def main():
     if sha256 is not None:
         verify_file(model_path, sha256)
     model = load_model(model_path).to(args.device)
+    print(model)
     if args.quantized:
         args.name += "_quantized"
     out = args.out / args.name
